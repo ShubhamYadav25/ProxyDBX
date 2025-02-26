@@ -47,7 +47,7 @@ namespace ProxyDBX.Database.Shard
             }
         }
 
-        private int GetShardNumber(string username)
+        public int GetShardNumber(string username)
         {
             char firstLetter = char.ToLower(username[0]);
             if (firstLetter >= 'a' && firstLetter <= 'e') return 1;
@@ -59,10 +59,10 @@ namespace ProxyDBX.Database.Shard
             return 5;
         }
 
-        public void AddUser(User user)
+        public void AddUser(User user, string databasePath = null)
         {
             int shardNumber = GetShardNumber(user.Username);
-            string dbPath = _shards[shardNumber];
+            string dbPath = databasePath ?? _shards[shardNumber];
 
             using (var connection = new SqliteConnection($"Data Source={dbPath}"))
             {
@@ -83,5 +83,11 @@ namespace ProxyDBX.Database.Shard
                 return connection.Query<User>("SELECT * FROM Users").ToList();
             }
         }
+
+        public string GetShardPath(int shardNumber)
+        {
+            return _shards.ContainsKey(shardNumber) ? _shards[shardNumber] : _shards[5];
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 using ProxyDBX.Database.Shard;
+using ProxyDBX.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
+app.UseMiddleware<ShardMiddleware>();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
