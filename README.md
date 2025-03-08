@@ -12,7 +12,7 @@
 ✔ **SQL Parsing & Optimization** – Uses **ANTLR4** to enhance query execution.\
 ✔ **High-Performance ORM** – Integrates with **Dapper** for efficient SQL operations.\
 ✔ **Scalable & Lightweight** – Ideal for large-scale distributed applications.\
-✔ **Multi-Database Support** – Compatible with **SQL Server, PostgreSQL, MySQL, etc.**
+✔ **Multi-Database Support** – Compatible with **Sqlite** for now
 
 ---
 
@@ -21,7 +21,7 @@
 ### 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/ProxyDBX.git
+git clone https://github.com/ShubhamYadav25/ProxyDBX.git
 cd ProxyDBX
 ```
 
@@ -69,6 +69,6 @@ Contributions are welcome! 🚀 Follow these steps:
 ## 📬 Contact
 
 - **LinkedIn**: [Shubham Yadav](https://www.linkedin.com/in/shubham-yadav-2b58271b8/)
-- 
+
 🌟 **Enjoying ProxyDBX? Star this repo!** ⭐
 
